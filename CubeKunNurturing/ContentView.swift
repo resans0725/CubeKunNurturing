@@ -86,6 +86,9 @@ struct SceneKitView: UIViewRepresentable {
         // 地面の設定
         addGround(to: scene)
         
+        // 木の設定
+        addTree(to: scene)
+        
         // 背景の設定
         scene.background.contents = UIColor.green.withAlphaComponent(0.5)
         
@@ -182,6 +185,23 @@ struct SceneKitView: UIViewRepresentable {
         groundNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
         
         scene.rootNode.addChildNode(groundNode)
+    }
+    
+    private func addTree(to scene: SCNScene) {
+        guard let treeScene = SCNScene(named: "Tree.usdz") else {
+            print("Failed to load character scene.")
+            return
+        }
+        
+        guard let treeNode = treeScene.rootNode.childNodes.first else {
+            print("Failed to find the tree node.")
+            return
+        }
+        
+        treeNode.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+        treeNode.position = SCNVector3(x: 18, y: -1, z: -2)
+        treeNode.rotation = SCNVector4(1, 0, 0, -Float.pi / 2)
+        scene.rootNode.addChildNode(treeNode)
     }
 
     private func addCharacter(to scene: SCNScene, cameraNode: SCNNode) {
