@@ -11,12 +11,14 @@ import SceneKit
 struct ContentView: View {
     @State private var isObjectThrown = false
     @State private var cameraMode = false
+    @State private var cleaningMode = false
 
     var body: some View {
         VStack {
             SceneKitView(
                 isObjectThrown: $isObjectThrown,
-                cameraMode: $cameraMode
+                cameraMode: $cameraMode,
+                cleaningMode: $cleaningMode
             )
             .edgesIgnoringSafeArea(.all)
             .overlay(alignment: .bottom) {
@@ -24,6 +26,14 @@ struct ContentView: View {
                     HStack {
                         Button("ごはん") {
                             isObjectThrown.toggle()
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        
+                        Button("お掃除") {
+                            cleaningMode.toggle()
                         }
                         .padding()
                         .background(Color.blue)
@@ -47,6 +57,7 @@ struct ContentView: View {
 struct SceneKitView: UIViewRepresentable {
     @Binding var isObjectThrown: Bool
     @Binding var cameraMode: Bool
+    @Binding var cleaningMode: Bool
     @State private var sceneView = SCNView()
     
     func makeUIView(context: Context) -> SCNView {
@@ -100,7 +111,38 @@ struct SceneKitView: UIViewRepresentable {
         uiView.allowsCameraControl = cameraMode
         
         if !cameraMode {
+            // カメラモードを終了したら初期位置にリセット
+            resetCameraPosition(uiView)
+        }
+        
+        if cleaningMode {
+            // クリーニングモードなら投げたオブジェクトを削除
+            removeThrownObjects(from: uiView)
             
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.cleaningMode = false
+            }
+        }
+    }
+    
+    // カメラの位置を初期位置にリセット
+    private func resetCameraPosition(_ sceneView: SCNView) {
+        guard let scene = sceneView.scene else { return }
+        
+        if let cameraNode = scene.rootNode.childNode(withName: "MainCamera", recursively: true) {
+            cameraNode.position = SCNVector3(x: 0, y: 15, z: 20) // 初期位置に戻す
+            cameraNode.eulerAngles = SCNVector3(-Float.pi / 6, 0, 0) // 角度もリセット
+        }
+    }
+
+    // 投げたオブジェクトを削除する
+    private func removeThrownObjects(from sceneView: SCNView) {
+        guard let scene = sceneView.scene else { return }
+        
+        for node in scene.rootNode.childNodes {
+            if node.geometry is SCNBox { // 投げたオブジェクトを特定
+                node.removeFromParentNode() // 削除
+            }
         }
     }
 
