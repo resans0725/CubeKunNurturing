@@ -21,6 +21,24 @@ struct ContentView: View {
                 cleaningMode: $cleaningMode
             )
             .edgesIgnoringSafeArea(.all)
+            .overlay(alignment: .top, content: {
+                HStack(spacing: 20) {
+                    VStack {
+                        Text("飼育日数")
+                        Text("1日目")
+                    }
+                    
+                    VStack {
+                        Text("満足度")
+                        Text("50%")
+                    }
+                    
+                    VStack {
+                        Text("大きさ")
+                        Text("10cm")
+                    }
+                }
+            })
             .overlay(alignment: .bottom) {
                     
                     HStack {
@@ -88,6 +106,18 @@ struct SceneKitView: UIViewRepresentable {
         
         // 木の設定
         addTree(to: scene)
+        
+//        // 石の設定
+        addStone(to: scene)
+//        
+//        // 花の設定
+//        addFlower(to: scene)
+//        
+//        // ベンチの設定
+//        addBench(to: scene)
+        
+        // きのこの設定
+        addMash(to: scene)
         
         // 背景の設定
         scene.background.contents = UIColor.green.withAlphaComponent(0.5)
@@ -188,7 +218,7 @@ struct SceneKitView: UIViewRepresentable {
     }
     
     private func addTree(to scene: SCNScene) {
-        guard let treeScene = SCNScene(named: "Tree.usdz") else {
+        guard let treeScene = SCNScene(named: "tree.usdz") else {
             print("Failed to load character scene.")
             return
         }
@@ -202,6 +232,74 @@ struct SceneKitView: UIViewRepresentable {
         treeNode.position = SCNVector3(x: 18, y: -1, z: -2)
         treeNode.rotation = SCNVector4(1, 0, 0, -Float.pi / 2)
         scene.rootNode.addChildNode(treeNode)
+    }
+    
+    private func addBench(to scene: SCNScene) {
+        guard let benchScene = SCNScene(named: "bench.usdz") else {
+            print("Failed to load character scene.")
+            return
+        }
+        
+        guard let benchNode = benchScene.rootNode.childNodes.first else {
+            print("Failed to find the bench node.")
+            return
+        }
+        
+        benchNode.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+        benchNode.position = SCNVector3(x: 18, y: -1, z: -2)
+        benchNode.rotation = SCNVector4(1, 0, 0, -Float.pi / 2)
+        scene.rootNode.addChildNode(benchNode)
+    }
+    
+    private func addStone(to scene: SCNScene) {
+        guard let stoneScene = SCNScene(named: "stone.usdz") else {
+            print("Failed to load character scene.")
+            return
+        }
+        
+        guard let stoneNode = stoneScene.rootNode.childNodes.first else {
+            print("Failed to find the stone node.")
+            return
+        }
+        
+        stoneNode.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+        stoneNode.position = SCNVector3(x: 0, y: -1, z: -2)
+        stoneNode.rotation = SCNVector4(1, 0, 0, -Float.pi / 2)
+        scene.rootNode.addChildNode(stoneNode)
+    }
+    
+    private func addFlower(to scene: SCNScene) {
+        guard let flowerScene = SCNScene(named: "flower.usdz") else {
+            print("Failed to load character scene.")
+            return
+        }
+        
+        guard let flowerNode = flowerScene.rootNode.childNodes.first else {
+            print("Failed to find the flower node.")
+            return
+        }
+        
+        flowerNode.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+        flowerNode.position = SCNVector3(x: 18, y: -1, z: -2)
+        flowerNode.rotation = SCNVector4(1, 0, 0, -Float.pi / 2)
+        scene.rootNode.addChildNode(flowerNode)
+    }
+    
+    private func addMash(to scene: SCNScene) {
+        guard let mashScene = SCNScene(named: "mash.usdz") else {
+            print("Failed to load character scene.")
+            return
+        }
+        
+        guard let mashNode = mashScene.rootNode.childNodes.first else {
+            print("Failed to find the tree node.")
+            return
+        }
+        
+        mashNode.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+        mashNode.position = SCNVector3(x: -2, y: -1, z: 1)
+        mashNode.rotation = SCNVector4(1, 0, 0, -Float.pi / 2)
+        scene.rootNode.addChildNode(mashNode)
     }
 
     private func addCharacter(to scene: SCNScene, cameraNode: SCNNode) {

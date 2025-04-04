@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
+
+extension DefaultsKey {
+    // 飼育日数
+    var breedingDays: DefaultsKey<Int>{
+        .init("breedingDays", defaultValue: 1)
+    }
+}

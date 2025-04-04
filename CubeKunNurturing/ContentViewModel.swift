@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
+
+final class ContentViewModel: ObservableObject {
+//    @Published var breedingDays: Int = Defaults[keyPath: "breedingDays"]
+}
