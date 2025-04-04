@@ -1,76 +1,12 @@
 //
-//  ContentView.swift
+//  SceneKitView.swift
 //  CubeKunNurturing
 //
-//  Created by 永井涼 on 2025/03/31.
+//  Created by 永井涼 on 2025/04/04.
 //
 
 import SwiftUI
 import SceneKit
-
-struct ContentView: View {
-    @State private var isObjectThrown = false
-    @State private var cameraMode = false
-    @State private var cleaningMode = false
-
-    var body: some View {
-        VStack {
-            SceneKitView(
-                isObjectThrown: $isObjectThrown,
-                cameraMode: $cameraMode,
-                cleaningMode: $cleaningMode
-            )
-            .edgesIgnoringSafeArea(.all)
-            .overlay(alignment: .top, content: {
-                HStack(spacing: 20) {
-                    VStack {
-                        Text("飼育日数")
-                        Text("1日目")
-                    }
-                    
-                    VStack {
-                        Text("満足度")
-                        Text("50%")
-                    }
-                    
-                    VStack {
-                        Text("大きさ")
-                        Text("10cm")
-                    }
-                }
-            })
-            .overlay(alignment: .bottom) {
-                    
-                    HStack {
-                        Button("ごはん") {
-                            isObjectThrown.toggle()
-                        }
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        
-                        Button("お掃除") {
-                            cleaningMode.toggle()
-                        }
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        
-                        Button(cameraMode ? "飼育モード": "観察モード") {
-                            cameraMode.toggle()
-                        }
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                    }
-                    
-                }
-        }
-    }
-}
 
 struct SceneKitView: UIViewRepresentable {
     @Binding var isObjectThrown: Bool
@@ -109,10 +45,10 @@ struct SceneKitView: UIViewRepresentable {
         
 //        // 石の設定
         addStone(to: scene)
-//        
+//
 //        // 花の設定
 //        addFlower(to: scene)
-//        
+//
 //        // ベンチの設定
 //        addBench(to: scene)
         
@@ -179,16 +115,43 @@ struct SceneKitView: UIViewRepresentable {
         }
     }
 
+    // キューブを投げる
     private func createAndThrowObject(in sceneView: SCNView) {
         guard let scene = sceneView.scene else { return }
         
         let newBoxNode = create3DObject()
         scene.rootNode.addChildNode(newBoxNode)
 
-        let force = SCNVector3(x: 0, y: 0, z: -1)
+        let randomX = Float.random(in: -1.0...1.0) // X軸のランダム方向
+        let randomY = Float.random(in: -1.0...1.0) // Y軸のランダム方向
+        let randomZ = Float.random(in: -1.0...1.0) // Z軸のランダム方向
+        let force = SCNVector3(x: randomX, y: randomY, z: randomZ)
         newBoxNode.physicsBody?.applyForce(force, asImpulse: true)
+        
+        // キャラクターを検索し、取得
+        if let character = scene.rootNode.childNode(withName: "robot_walk_idle", recursively: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                moveCharacterToObject(character: character, objectNode: newBoxNode)
+            }
+        }
+    }
+    
+    // 投げたキューブに移動して食べる
+    func moveCharacterToObject(character: SCNNode, objectNode: SCNNode) {
+        let moveAction = SCNAction.move(to: SCNVector3(x: objectNode.position.x,  y: -1, z: objectNode.position.z), duration: 2.0)
+        character.runAction(moveAction) {
+            // 🥄 食べ物を削除
+            objectNode.removeFromParentNode()
+
+            // 🍴 食べるアニメーション（仮）
+//            let eatAnimation = SCNAction.scale(to: 0.1, duration: 0.3)
+//            let resetScale = SCNAction.scale(to: 0.1, duration: 0.3)
+//            let eatSequence = SCNAction.sequence([eatAnimation, resetScale])
+//            character.runAction(eatSequence)
+        }
     }
 
+    // キューブを生成
     private func create3DObject() -> SCNNode {
         let box = SCNBox(width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0)
         let boxNode = SCNNode(geometry: box)

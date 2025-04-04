@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4EC6F42D9F9F2D00A4F2A5 /* tokotoko-kun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A4EC6F32D9F9F2D00A4F2A5 /* tokotoko-kun.mp3 */; };
+		2A4EC6F62D9F9F3400A4F2A5 /* nyantoko-talk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A4EC6F52D9F9F3400A4F2A5 /* nyantoko-talk.mp3 */; };
+		2A4EC6F92D9F9FC700A4F2A5 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EC6F82D9F9FC700A4F2A5 /* MusicPlayer.swift */; };
 		2A9F3B442D9A891B003ADF70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F3B3F2D9A891B003ADF70 /* ContentView.swift */; };
 		2A9F3B452D9A891B003ADF70 /* CubeKunNurturingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F3B402D9A891B003ADF70 /* CubeKunNurturingApp.swift */; };
 		2A9F3B462D9A891B003ADF70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F3B3C2D9A891B003ADF70 /* Preview Assets.xcassets */; };
@@ -21,9 +24,18 @@
 		2AA154182D9B96180054C52D /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 2AA154172D9B96180054C52D /* SwiftyUserDefaults */; };
 		2AA1541A2D9B964C0054C52D /* SwiftyUserDefaultsPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA154192D9B964C0054C52D /* SwiftyUserDefaultsPlugin.swift */; };
 		2AA1541C2D9B97070054C52D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1541B2D9B97070054C52D /* ContentViewModel.swift */; };
+		2AA154262D9F7FAE0054C52D /* GlobalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA154252D9F7FAE0054C52D /* GlobalViewModel.swift */; };
+		2AA154282D9F87A60054C52D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA154272D9F87A60054C52D /* HomeView.swift */; };
+		2AA1542B2D9F88030054C52D /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1542A2D9F88030054C52D /* SceneKitView.swift */; };
+		2AA1542D2D9F88540054C52D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1542C2D9F88540054C52D /* HomeViewModel.swift */; };
+		2AA154302D9F8CC80054C52D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1542F2D9F8CC80054C52D /* SplashView.swift */; };
+		2AA154322D9F8E550054C52D /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA154312D9F8E550054C52D /* TutorialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A4EC6F32D9F9F2D00A4F2A5 /* tokotoko-kun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "tokotoko-kun.mp3"; sourceTree = "<group>"; };
+		2A4EC6F52D9F9F3400A4F2A5 /* nyantoko-talk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "nyantoko-talk.mp3"; sourceTree = "<group>"; };
+		2A4EC6F82D9F9FC700A4F2A5 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		2A9F3B182D9A85FC003ADF70 /* CubeKunNurturing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubeKunNurturing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9F3B3C2D9A891B003ADF70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A9F3B3E2D9A891B003ADF70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +50,12 @@
 		2AA154142D9B947B0054C52D /* stone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = stone.usdz; sourceTree = "<group>"; };
 		2AA154192D9B964C0054C52D /* SwiftyUserDefaultsPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaultsPlugin.swift; sourceTree = "<group>"; };
 		2AA1541B2D9B97070054C52D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		2AA154252D9F7FAE0054C52D /* GlobalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewModel.swift; sourceTree = "<group>"; };
+		2AA154272D9F87A60054C52D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2AA1542A2D9F88030054C52D /* SceneKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
+		2AA1542C2D9F88540054C52D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2AA1542F2D9F8CC80054C52D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		2AA154312D9F8E550054C52D /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A4EC6F22D9F9F1B00A4F2A5 /* BGM */ = {
+			isa = PBXGroup;
+			children = (
+				2A4EC6F32D9F9F2D00A4F2A5 /* tokotoko-kun.mp3 */,
+				2A4EC6F52D9F9F3400A4F2A5 /* nyantoko-talk.mp3 */,
+			);
+			path = BGM;
+			sourceTree = "<group>";
+		};
+		2A4EC6F72D9F9FA600A4F2A5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2A4EC6F82D9F9FC700A4F2A5 /* MusicPlayer.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		2A9F3B0F2D9A85FC003ADF70 = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +114,100 @@
 		2A9F3B432D9A891B003ADF70 /* CubeKunNurturing */ = {
 			isa = PBXGroup;
 			children = (
+				2AA1541D2D9F77A50054C52D /* Views */,
+				2AA1541E2D9F79A80054C52D /* Screens */,
+				2AA154232D9F7B8A0054C52D /* Libraries */,
+				2AA154242D9F7BB90054C52D /* Resources */,
+				2A9F3B3D2D9A891B003ADF70 /* Preview Content */,
+			);
+			path = CubeKunNurturing;
+			sourceTree = "<group>";
+		};
+		2AA1541D2D9F77A50054C52D /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				2A9F3B402D9A891B003ADF70 /* CubeKunNurturingApp.swift */,
+				2AA154252D9F7FAE0054C52D /* GlobalViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AA1541E2D9F79A80054C52D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
 				2A9F3B3F2D9A891B003ADF70 /* ContentView.swift */,
 				2AA1541B2D9B97070054C52D /* ContentViewModel.swift */,
+				2A4EC6F72D9F9FA600A4F2A5 /* Component */,
+				2AA1541F2D9F79CC0054C52D /* SplashScreen */,
+				2AA154202D9F79E10054C52D /* TutorialScreen */,
+				2AA154212D9F7A050054C52D /* MainScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2AA1541F2D9F79CC0054C52D /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AA1542F2D9F8CC80054C52D /* SplashView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		2AA154202D9F79E10054C52D /* TutorialScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AA154312D9F8E550054C52D /* TutorialView.swift */,
+			);
+			path = TutorialScreen;
+			sourceTree = "<group>";
+		};
+		2AA154212D9F7A050054C52D /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AA154222D9F7A360054C52D /* HomeScreen */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		2AA154222D9F7A360054C52D /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AA154272D9F87A60054C52D /* HomeView.swift */,
+				2AA1542C2D9F88540054C52D /* HomeViewModel.swift */,
+				2AA154292D9F87D20054C52D /* Component */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		2AA154232D9F7B8A0054C52D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
 				2AA154192D9B964C0054C52D /* SwiftyUserDefaultsPlugin.swift */,
-				2A9F3B3D2D9A891B003ADF70 /* Preview Content */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		2AA154242D9F7BB90054C52D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A4EC6F22D9F9F1B00A4F2A5 /* BGM */,
+				2AA1542E2D9F88F50054C52D /* 3DModel */,
 				2A9F3B3E2D9A891B003ADF70 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2AA154292D9F87D20054C52D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2AA1542A2D9F88030054C52D /* SceneKitView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		2AA1542E2D9F88F50054C52D /* 3DModel */ = {
+			isa = PBXGroup;
+			children = (
 				2A9F3B412D9A891B003ADF70 /* pancakes.usdz */,
 				2A9F3B422D9A891B003ADF70 /* robot_walk_idle.usdz */,
 				2AA154042D9ABD200054C52D /* tree.usdz */,
@@ -93,7 +216,7 @@
 				2AA154102D9B90490054C52D /* flower.usdz */,
 				2AA154122D9B90500054C52D /* mash.usdz */,
 			);
-			path = CubeKunNurturing;
+			path = 3DModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +286,9 @@
 			files = (
 				2AA154132D9B90500054C52D /* mash.usdz in Resources */,
 				2AA154092D9B86D60054C52D /* bench.usdz in Resources */,
+				2A4EC6F62D9F9F3400A4F2A5 /* nyantoko-talk.mp3 in Resources */,
 				2A9F3B462D9A891B003ADF70 /* Preview Assets.xcassets in Resources */,
+				2A4EC6F42D9F9F2D00A4F2A5 /* tokotoko-kun.mp3 in Resources */,
 				2AA154152D9B947B0054C52D /* stone.usdz in Resources */,
 				2A9F3B472D9A891B003ADF70 /* Assets.xcassets in Resources */,
 				2A9F3B482D9A891B003ADF70 /* pancakes.usdz in Resources */,
@@ -180,10 +305,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4EC6F92D9F9FC700A4F2A5 /* MusicPlayer.swift in Sources */,
+				2AA154262D9F7FAE0054C52D /* GlobalViewModel.swift in Sources */,
 				2AA1541C2D9B97070054C52D /* ContentViewModel.swift in Sources */,
+				2AA1542B2D9F88030054C52D /* SceneKitView.swift in Sources */,
+				2AA1542D2D9F88540054C52D /* HomeViewModel.swift in Sources */,
 				2AA1541A2D9B964C0054C52D /* SwiftyUserDefaultsPlugin.swift in Sources */,
+				2AA154282D9F87A60054C52D /* HomeView.swift in Sources */,
 				2A9F3B442D9A891B003ADF70 /* ContentView.swift in Sources */,
 				2A9F3B452D9A891B003ADF70 /* CubeKunNurturingApp.swift in Sources */,
+				2AA154322D9F8E550054C52D /* TutorialView.swift in Sources */,
+				2AA154302D9F8CC80054C52D /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@ struct CubeKunNurturingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(GlobalViewModel.shared)
         }
     }
 }
