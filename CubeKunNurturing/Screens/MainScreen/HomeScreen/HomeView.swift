@@ -16,29 +16,31 @@ struct HomeView: View {
             SceneKitView(
                 isObjectThrown: $viewModel.isObjectThrown,
                 cameraMode: $viewModel.cameraMode,
-                cleaningMode: $viewModel.cleaningMode
+                cleaningMode: $viewModel.cleaningMode,
+                cubeSize: $viewModel.cubeSize,
+                addCubeSize: viewModel.addCubeSize,
+                addSatisfaction: viewModel.addSatisfaction
             )
             .edgesIgnoringSafeArea(.all)
             .overlay(alignment: .top, content: {
                 HStack(spacing: 20) {
                     VStack {
                         Text("飼育日数")
-                        Text("1日目")
+                        Text("\(viewModel.breedingDays)日目")
                     }
                     
                     VStack {
                         Text("満足度")
-                        Text("50%")
+                        Text("\(viewModel.satisfaction)%")
                     }
                     
                     VStack {
                         Text("大きさ")
-                        Text("10cm")
+                        Text("\(viewModel.cubeSize)cm")
                     }
                 }
             })
             .overlay(alignment: .bottom) {
-                    
                     HStack {
                         Button("ごはん") {
                             viewModel.onTapCubeFood()

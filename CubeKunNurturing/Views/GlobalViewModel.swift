@@ -19,11 +19,6 @@ extension GlobalViewModel {
 final class GlobalViewModel: ObservableObject {
     static let shared: GlobalViewModel = .init()
     @Published private(set) var viewType: ContentViewType = .splashView
-    @Published private(set) var breedingDays: Int = Defaults.breedingDays
-    @Published private(set) var cubeSize: Double = Defaults.cubeSize
-    @Published private(set) var satisfaction: Int = Defaults.satisfaction
-    @Published private(set) var myGold: Int = Defaults.satisfaction
-    
     
     func switchSplashView() {
         Task { @MainActor in

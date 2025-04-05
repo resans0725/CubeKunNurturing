@@ -12,8 +12,11 @@ struct SceneKitView: UIViewRepresentable {
     @Binding var isObjectThrown: Bool
     @Binding var cameraMode: Bool
     @Binding var cleaningMode: Bool
-    @State private var sceneView = SCNView()
-    
+    @Binding var cubeSize: Double
+    @State var sceneView = SCNView()
+    var addCubeSize: () -> Void
+    var addSatisfaction: () -> Void
+
     func makeUIView(context: Context) -> SCNView {
         let sceneView = SCNView()
         let scene = SCNScene()
@@ -140,14 +143,27 @@ struct SceneKitView: UIViewRepresentable {
     func moveCharacterToObject(character: SCNNode, objectNode: SCNNode) {
         let moveAction = SCNAction.move(to: SCNVector3(x: objectNode.position.x,  y: -1, z: objectNode.position.z), duration: 2.0)
         character.runAction(moveAction) {
+            Task { @MainActor in
             // 🥄 食べ物を削除
             objectNode.removeFromParentNode()
+            
+            // 満足度を上げる
+            addSatisfaction()
+                
+            // 大きくする
+            addCubeSize()
+           
+            let cubeSize = Float(cubeSize) / 10
+            
+            character.scale = .init(x: cubeSize, y: cubeSize, z: cubeSize)
 
             // 🍴 食べるアニメーション（仮）
 //            let eatAnimation = SCNAction.scale(to: 0.1, duration: 0.3)
 //            let resetScale = SCNAction.scale(to: 0.1, duration: 0.3)
 //            let eatSequence = SCNAction.sequence([eatAnimation, resetScale])
 //            character.runAction(eatSequence)
+                
+            }
         }
     }
 
@@ -276,7 +292,9 @@ struct SceneKitView: UIViewRepresentable {
             return
         }
         
-        characterNode.scale = SCNVector3(x: 0.1, y: 0.1, z: 0.1)
+        let cubeSize = Float(cubeSize) / 10
+        
+        characterNode.scale = SCNVector3(x: cubeSize, y: cubeSize, z: cubeSize)
         characterNode.position = SCNVector3(x: 0, y: -1, z: 0)
         
         scene.rootNode.addChildNode(characterNode)

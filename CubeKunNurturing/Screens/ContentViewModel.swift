@@ -9,26 +9,25 @@ import SwiftyUserDefaults
 import SwiftUI
 
 final class ContentViewModel: ObservableObject {
-    @Published  private var lastExecutionDate: String? = Defaults.lastExecutionDate
+    init() {
+        executeOncePerDay()
+    }
     
     func executeOncePerDay() {
         let today = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
         
-        if let lastDate = lastExecutionDate {
+        if let lastDate = Defaults.lastExecutionDate {
             if lastDate != today {
                 performDailyTask()
-                lastExecutionDate = today  // 日付を更新
+                Defaults.lastExecutionDate = today  // 日付を更新
             }
         } else {
-            // 初回起動時も実行
-            performDailyTask()
-            lastExecutionDate = today  // 初回の値をセット
+            Defaults.lastExecutionDate = today  // 初回の値をセット
         }
     }
     
     // 1日1回実行する処理
     func performDailyTask() {
-        print("1日1回の処理を実行")
-        // ここに実行したい処理を書く
+        Defaults.breedingDays += 1
     }
 }

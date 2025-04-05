@@ -22,12 +22,12 @@ extension DefaultsKeys {
     
     // 大きさ
     var cubeSize: DefaultsKey<Double> {
-        .init("cubeSize", defaultValue: 0.05)
+        .init("cubeSize", defaultValue: 0.5)
     }
     
     // 所持ゴールド
     var myGold: DefaultsKey<Int> {
-        .init("myGold", defaultValue: 0)
+        .init("myGold", defaultValue: 500)
     }
 }
 
