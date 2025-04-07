@@ -16,6 +16,7 @@
 		2A9F3B472D9A891B003ADF70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F3B3E2D9A891B003ADF70 /* Assets.xcassets */; };
 		2A9F3B482D9A891B003ADF70 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F3B412D9A891B003ADF70 /* pancakes.usdz */; };
 		2A9F3B492D9A891B003ADF70 /* robot_walk_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F3B422D9A891B003ADF70 /* robot_walk_idle.usdz */; };
+		2AA04F6B2DA3BAA4005004F1 /* cubekun.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA04F6A2DA3BAA4005004F1 /* cubekun.usdz */; };
 		2AA154052D9ABD200054C52D /* tree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA154042D9ABD200054C52D /* tree.usdz */; };
 		2AA154092D9B86D60054C52D /* bench.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA154082D9B86D60054C52D /* bench.usdz */; };
 		2AA154112D9B90490054C52D /* flower.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA154102D9B90490054C52D /* flower.usdz */; };
@@ -43,6 +44,7 @@
 		2A9F3B402D9A891B003ADF70 /* CubeKunNurturingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeKunNurturingApp.swift; sourceTree = "<group>"; };
 		2A9F3B412D9A891B003ADF70 /* pancakes.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = pancakes.usdz; sourceTree = "<group>"; };
 		2A9F3B422D9A891B003ADF70 /* robot_walk_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_walk_idle.usdz; sourceTree = "<group>"; };
+		2AA04F6A2DA3BAA4005004F1 /* cubekun.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = cubekun.usdz; sourceTree = "<group>"; };
 		2AA154042D9ABD200054C52D /* tree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree.usdz; sourceTree = "<group>"; };
 		2AA154082D9B86D60054C52D /* bench.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = bench.usdz; sourceTree = "<group>"; };
 		2AA154102D9B90490054C52D /* flower.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = flower.usdz; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				2AA154082D9B86D60054C52D /* bench.usdz */,
 				2AA154102D9B90490054C52D /* flower.usdz */,
 				2AA154122D9B90500054C52D /* mash.usdz */,
+				2AA04F6A2DA3BAA4005004F1 /* cubekun.usdz */,
 			);
 			path = 3DModel;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AA154132D9B90500054C52D /* mash.usdz in Resources */,
+				2AA04F6B2DA3BAA4005004F1 /* cubekun.usdz in Resources */,
 				2AA154092D9B86D60054C52D /* bench.usdz in Resources */,
 				2A4EC6F62D9F9F3400A4F2A5 /* nyantoko-talk.mp3 in Resources */,
 				2A9F3B462D9A891B003ADF70 /* Preview Assets.xcassets in Resources */,

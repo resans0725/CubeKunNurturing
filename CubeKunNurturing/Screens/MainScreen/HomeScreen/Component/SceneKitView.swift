@@ -132,7 +132,7 @@ struct SceneKitView: UIViewRepresentable {
         newBoxNode.physicsBody?.applyForce(force, asImpulse: true)
         
         // キャラクターを検索し、取得
-        if let character = scene.rootNode.childNode(withName: "robot_walk_idle", recursively: true) {
+        if let character = scene.rootNode.childNode(withName: "_______", recursively: true) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
                 moveCharacterToObject(character: character, objectNode: newBoxNode)
             }
@@ -282,16 +282,18 @@ struct SceneKitView: UIViewRepresentable {
     }
 
     private func addCharacter(to scene: SCNScene, cameraNode: SCNNode) {
-        guard let characterScene = SCNScene(named: "robot_walk_idle.usdz") else {
+        guard let characterScene = SCNScene(named: "cubekun.usdz") else {
             print("Failed to load character scene.")
             return
         }
         
-        guard let characterNode = characterScene.rootNode.childNode(withName: "robot_walk_idle", recursively: true) else {
+        guard let characterNode = characterScene.rootNode.childNodes.first else {
             print("Failed to find the character node.")
             return
         }
         
+        print("キューブノード")
+        print(characterNode)
         let cubeSize = Float(cubeSize) / 10
         
         characterNode.scale = SCNVector3(x: cubeSize, y: cubeSize, z: cubeSize)
@@ -306,7 +308,7 @@ struct SceneKitView: UIViewRepresentable {
     }
 
     private func startWalkingMovement(for characterNode: SCNNode) {
-        let movementRange: Float = 5.0
+        let movementRange: Float = 4.0
         
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
             let randomX = Float.random(in: -movementRange...movementRange)

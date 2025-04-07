@@ -52,7 +52,7 @@ final class HomeViewModel: ObservableObject {
             
             if satisfaction != maxSatisfaction {
                 satisfaction += 5
-                Defaults.cubeSize += 5
+                Defaults.satisfaction += 5
             }
         }
     }
