@@ -17,6 +17,7 @@
 		2A9F3B482D9A891B003ADF70 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F3B412D9A891B003ADF70 /* pancakes.usdz */; };
 		2A9F3B492D9A891B003ADF70 /* robot_walk_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F3B422D9A891B003ADF70 /* robot_walk_idle.usdz */; };
 		2AA04F6B2DA3BAA4005004F1 /* cubekun.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA04F6A2DA3BAA4005004F1 /* cubekun.usdz */; };
+		2AA04F6E2DA4C177005004F1 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA04F6D2DA4C177005004F1 /* Color+.swift */; };
 		2AA154052D9ABD200054C52D /* tree.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA154042D9ABD200054C52D /* tree.usdz */; };
 		2AA154092D9B86D60054C52D /* bench.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA154082D9B86D60054C52D /* bench.usdz */; };
 		2AA154112D9B90490054C52D /* flower.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2AA154102D9B90490054C52D /* flower.usdz */; };
@@ -45,6 +46,7 @@
 		2A9F3B412D9A891B003ADF70 /* pancakes.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = pancakes.usdz; sourceTree = "<group>"; };
 		2A9F3B422D9A891B003ADF70 /* robot_walk_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_walk_idle.usdz; sourceTree = "<group>"; };
 		2AA04F6A2DA3BAA4005004F1 /* cubekun.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = cubekun.usdz; sourceTree = "<group>"; };
+		2AA04F6D2DA4C177005004F1 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		2AA154042D9ABD200054C52D /* tree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree.usdz; sourceTree = "<group>"; };
 		2AA154082D9B86D60054C52D /* bench.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = bench.usdz; sourceTree = "<group>"; };
 		2AA154102D9B90490054C52D /* flower.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = flower.usdz; sourceTree = "<group>"; };
@@ -117,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2AA1541D2D9F77A50054C52D /* Views */,
-				2AA1541E2D9F79A80054C52D /* Screens */,
+				2AA04F6C2DA4C14C005004F1 /* Extension */,
 				2AA154232D9F7B8A0054C52D /* Libraries */,
 				2AA154242D9F7BB90054C52D /* Resources */,
 				2A9F3B3D2D9A891B003ADF70 /* Preview Content */,
@@ -125,11 +127,20 @@
 			path = CubeKunNurturing;
 			sourceTree = "<group>";
 		};
+		2AA04F6C2DA4C14C005004F1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2AA04F6D2DA4C177005004F1 /* Color+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2AA1541D2D9F77A50054C52D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2A9F3B402D9A891B003ADF70 /* CubeKunNurturingApp.swift */,
 				2AA154252D9F7FAE0054C52D /* GlobalViewModel.swift */,
+				2AA1541E2D9F79A80054C52D /* Screens */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A4EC6F92D9F9FC700A4F2A5 /* MusicPlayer.swift in Sources */,
+				2AA04F6E2DA4C177005004F1 /* Color+.swift in Sources */,
 				2AA154262D9F7FAE0054C52D /* GlobalViewModel.swift in Sources */,
 				2AA1541C2D9B97070054C52D /* ContentViewModel.swift in Sources */,
 				2AA1542B2D9F88030054C52D /* SceneKitView.swift in Sources */,
